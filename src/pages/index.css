@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.header {
+    background: #7695EC;
+    height: 5rem;
+    padding: 37px 27px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.newNote {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #999999;
+    margin: 0 1.5rem;
+    border-radius: 1rem;
+}
+
+.newNote textarea{
+    resize: none;
+    height: 4.6rem;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.newNote button {
+    width: 7.5rem;
+    height: 2rem;
+}
