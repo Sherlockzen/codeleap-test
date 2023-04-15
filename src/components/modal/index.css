@@ -1,0 +1,33 @@
+.modal {
+    height: 99svh;
+    font-size: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+
+.modal-box {
+    box-sizing: border-box;
+    width: 500px;
+    height: 205px;
+    border-radius: 1rem;
+    border: 1px solid #CCCCCC;
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*button {*/
+/*    width: 111px;*/
+/*    height: 32px;*/
+/*    align-self: flex-end;*/
+/*    text-transform: uppercase;*/
+/*    background: #7695EC;*/
+/*    color: #FFFFFF;*/
+/*    border-radius: 0.5rem;*/
+/*    border: none;*/
+/*}*/

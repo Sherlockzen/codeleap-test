@@ -1,42 +1,43 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #DDDDDD;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 26px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.signup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.signup button {
+  width: 111px;
+  height: 32px;
+  align-self: flex-end;
+  text-transform: uppercase;
+  background: #7695EC;
+  color: #FFFFFF;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: #7695EC;
 }
 
-.card {
-  padding: 2em;
+.signup .deactived {
+  background: gray;
 }
 
-.read-the-docs {
-  color: #888;
+.signup input {
+  box-sizing: border-box;
+  border: 1px solid #777777;
+  border-radius: 0.5rem;
+  padding: 0.5rem 11.2px ;
+  height: 32px;
 }
