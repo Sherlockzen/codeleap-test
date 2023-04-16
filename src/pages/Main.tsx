@@ -1,12 +1,39 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './index.css'
+import {getAll} from "../actions/get";
+
+export interface Resp {
+    count: number
+    next: string
+    previous: any
+    results: Result[]
+}
+
+export interface Result {
+    id: number
+    username: string
+    created_datetime: string
+    title: string
+    content: string
+}
+
 const Main = () => {
 const [title, setTitle] = useState('');
 const [content, setContent] = useState('');
-
+const [data, setData] = useState<Resp>({
+    count: 0,
+    next: "",
+    previous: null,
+    results: []
+});
     const handleClick = () => {
         console.log('clicou');
     }
+
+    useEffect(() => {
+        getAll()
+            .then((value) => setData(value))
+    }, [])
 
     return (
       <div className={"container"}>
