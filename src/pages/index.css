@@ -23,18 +23,46 @@
     border-radius: 1rem;
 }
 
-.newNote textarea{
+input {
+    padding: 0.5rem 0.625rem;
+    border-radius: .5rem;
+    border: 1px solid #777777;
+    height: 2rem;
+}
+
+textarea{
     resize: none;
-    height: 4.6rem;
+    height: 4.625rem;
+    padding: 0.5rem 0.625rem;
+    border-radius: .5rem;
+    border: 1px solid #777777;
 }
 
 .flex-col {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: .5rem;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .newNote button {
     width: 7.5rem;
     height: 2rem;
+    align-self: end;
+    background: #7695EC;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: #7695EC;
+}
+
+.newNote .deactived {
+    background: grey;
 }
