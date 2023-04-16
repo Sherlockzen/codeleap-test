@@ -24,8 +24,6 @@ const axiosInstance = axios.create({
     },
 })
 
-// const url = 'https://dev.codeleap.co.uk/careers';
-
 export const getAll = async () => {
     const response = await axiosInstance.get('/')
     const data = response.data;

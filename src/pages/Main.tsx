@@ -1,21 +1,10 @@
 import React, {useEffect, useState} from "react";
 import './index.css'
 import {getAll} from "../actions/get";
+import '../utils/types'
+import {Resp, Result} from "../utils/types";
+import Card from "../components/card";
 
-export interface Resp {
-    count: number
-    next: string
-    previous: any
-    results: Result[]
-}
-
-export interface Result {
-    id: number
-    username: string
-    created_datetime: string
-    title: string
-    content: string
-}
 
 const Main = () => {
 const [title, setTitle] = useState('');
@@ -27,7 +16,7 @@ const [data, setData] = useState<Resp>({
     results: []
 });
     const handleClick = () => {
-        console.log('clicou');
+        console.log(data);
     }
 
     useEffect(() => {
@@ -60,16 +49,21 @@ const [data, setData] = useState<Resp>({
               />
             </label>
 
-            {(title && content !== "") ? (
+            {title && content !== "" ? (
               <button onClick={handleClick}>Create</button>
-            )
-            :
-            (
+            ) : (
               <button onClick={handleClick} className={"deactived"} disabled>
                 Create
               </button>
             )}
           </div>
+        </div>
+        <div className={"notes"}>
+            {
+                data.results.map((ele, index) => {
+                    return <Card props={ele} />
+                })
+            }
         </div>
       </div>
     );
