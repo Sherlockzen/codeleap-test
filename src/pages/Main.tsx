@@ -4,9 +4,12 @@ import {getAll} from "../actions/get";
 import '../utils/types'
 import {Resp, Result} from "../utils/types";
 import Card from "../components/card";
+import {userAtom} from "../atoms/atom";
+import {useAtom} from "jotai";
 
 
 const Main = () => {
+const [user, setUser] = useAtom(userAtom)
 const [title, setTitle] = useState('');
 const [content, setContent] = useState('');
 const [data, setData] = useState<Resp>({
@@ -20,6 +23,7 @@ const [data, setData] = useState<Resp>({
     }
 
     useEffect(() => {
+        console.log(user);
         getAll()
             .then((value) => setData(value))
     }, [])
@@ -61,7 +65,7 @@ const [data, setData] = useState<Resp>({
         <div className={"notes"}>
             {
                 data.results.map((ele, index) => {
-                    return <Card props={ele} />
+                    return <Card props={ele}/>
                 })
             }
         </div>
