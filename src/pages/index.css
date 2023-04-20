@@ -66,3 +66,9 @@ textarea{
 .newNote .deactived {
     background: grey;
 }
+
+.notes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}

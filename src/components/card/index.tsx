@@ -1,11 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import './index.css';
 import delIcon from '../../images/delete.svg'
 import edtIcon from '../../images/edit.svg'
+import {DateTime, Interval} from "luxon";
 
-const Card = ({ props }) => {
+const Card = ({props}:any) => {
+const [diffDate, setDiffDate] = useState({
+    days: 0,
+    hours: 0,
+    mins: 0,
+})
+
+    const dtCard = DateTime.fromISO(props.created_datetime);
+    const dtDiff = dtCard.diffNow(["days", "hours", "minutes"]);
+
+    //todo Converter os valores para number e remover o -
+    // setDiffDate({
+    //     days: dtDiff.days,
+    //     hours: dtDiff.hours,
+    //     mins: dtDiff.minutes,
+    // });
+
   return (
-    <div className={"cardContainer"}>
+    <div key={props.id} className={"cardContainer"}>
       <header>
         <h1>{props.title}</h1>
         <div className={"btnContainer"}>
@@ -13,7 +30,7 @@ const Card = ({ props }) => {
                 <img src={delIcon} alt={"delete"}/>
             </div>
             <div className={"btn"}>
-                <img src={edtIcon} alt={"delete"}/>
+                <img src={edtIcon} alt={"edit"}/>
             </div>
         </div>
       </header>
